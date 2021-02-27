@@ -13,8 +13,8 @@ Este proyecto existe gracias a que es mi primera andanza en Python. Me siento mu
   <strong>Tenga presente que este codigo es un experimento</strong>
   <br><br>
     <strong>
-      <a href="https://github.com/gusgeek/pyDolar-app/issues/new"> Ofrecer una Idea </a> | 
-      <a href="https://github.com/gusgeek/pyDolar-app/releases/latest"> Obtenerlo </a>
+      <a href="https://github.com/gusgeek/pyDolar-lib/issues/new"> Ofrecer una Idea </a> | 
+      <a href="https://github.com/gusgeek/pyDolar-lib/releases/latest"> Obtenerlo </a>
       <br>
       <a href="https://github.com/gusgeek/phpDolar"> Integrarlo en mi Sistema PHP </a>
     </strong>
@@ -48,10 +48,10 @@ Un ejemplo de implementacion seria
 ```
 <br><br>
 <p align="center">
-    <img src="https://img.shields.io/github/downloads/gusgeek/pyDolar-app/total">  
-    <img src="https://img.shields.io/github/v/release/gusgeek/pyDolar-app">  
-    <img src="https://img.shields.io/github/release-date/gusgeek/pyDolar-app">  
-    <img src="https://img.shields.io/github/languages/code-size/gusgeek/pyDolar-app">
+    <img src="https://img.shields.io/github/downloads/gusgeek/pyDolar-lib/total">  
+    <img src="https://img.shields.io/github/v/release/gusgeek/pyDolar-lib">  
+    <img src="https://img.shields.io/github/release-date/gusgeek/pyDolar-lib">  
+    <img src="https://img.shields.io/github/languages/code-size/gusgeek/pyDolar-lib">
   <br><br>
   <strong>:pencil2: con :heart:</strong>
 </p>
