@@ -1,50 +1,57 @@
 import requests
 
-def test():
-    print('hola')
-
-def bancoGalicia():
+def bancoGalicia(typeAc):
     r = requests.get('https://www.bancogalicia.com/cotizacion/cotizar?currencyId=02&quoteType=SU&quoteId=999')
     jsonResponse = r.json()
 
-    for key, value in jsonResponse.items():
+    if typeAc == 'buy':
+        return float(jsonResponse['buy'].replace(',', '.'))
+    elif typeAc == 'sell':
+        return float(jsonResponse['sell'].replace(',', '.'))
+    else:
+        return "error"
 
-        if key == 'error':
-            print('Disculpe pero en este momento no es posible conseguir la cotizacion \nIntente nuevamente mas tarde')
-        else:
-            if key == 'buy':
-                print(f'        Dolar Compra es de {value}')
-
-            elif key == 'sell':
-                print(f'        Dolar Venta es de {value}')
-
-def DolarSI():
+def DolarSI(typeAc):
     r = requests.get('https://www.dolarsi.com/api/api.php?type=cotizador')
     jsonResponse = r.json()
+
     for data in jsonResponse:
 
         compra = data['casa']['compra']
         venta = data['casa']['venta']
         nombre = data['casa']['nombre']
 
-        print(f"\n *** {nombre} ***")
-        print(f" COMPRA {compra} - VENTA {venta}\n")
+        if nombre == "Dolar":
+            if typeAc == 'buy':
+                return float(compra.replace(',', '.'))
+            elif typeAc == 'sell':
+                return float(venta.replace(',', '.'))
+        else:
+            return "error"
 
-def AmbitoFinanciero():
+def afOficial(typeAc):
     V = requests.get('https://mercados.ambito.com/dolar/oficial/variacion')
     jsonResponse = V.json()
 
-    print(f"\n *** Variacion USD las {jsonResponse['fecha']} ***")
-    print(f"         COMPRA {jsonResponse['compra']} - VENTA {jsonResponse['venta']}\n")
+    if typeAc == 'buy':
+        return float(jsonResponse['compra'].replace(',', '.'))
+    elif typeAc == 'sell':
+        return float(jsonResponse['venta'].replace(',', '.'))
 
+def afInformal(typeAc):
     I = requests.get('https://mercados.ambito.com/dolar/informal/variacion')
     jsonResponse = I.json()
 
-    print(f"\n *** USD Informal las {jsonResponse['fecha']} ***")
-    print(f"         COMPRA {jsonResponse['compra']} - VENTA {jsonResponse['venta']}\n")
+    if typeAc == 'buy':
+        return float(jsonResponse['compra'].replace(',', '.'))
+    elif typeAc == 'sell':
+        return float(jsonResponse['venta'].replace(',', '.'))
 
+def afTurista(typeAc):
     T = requests.get('https://mercados.ambito.com/dolarturista/variacion')
     jsonResponse = T.json()
 
-    print(f"\n *** USD Turista las {jsonResponse['fecha']} ***")
-    print(f"         COMPRA {jsonResponse['compra']} - VENTA {jsonResponse['venta']}\n")
+    if typeAc == 'buy':
+        return float(jsonResponse['compra'].replace(',', '.'))
+    elif typeAc == 'sell':
+        return float(jsonResponse['venta'].replace(',', '.'))
