@@ -5,8 +5,7 @@
   Libreria para la toma de cotizaciones del Dolar de Argentina
 </p>
 
-# Bienvenido
-
+# 
 Este proyecto existe gracias a que es mi primera andanza en Python. Me siento muy orgulloso de compartirlo para que vean cómo se puede experimentar con este increíble lenguaje.
 <br><br>
   <p align="center">
